@@ -1482,6 +1482,7 @@ footer {
 </footer>
 
 <script>
+  
 // CUSTOM CURSOR
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
@@ -1616,6 +1617,15 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const link = card.querySelector('a');
+    if (link) {
+      window.open(link.href, '_blank');
     }
   });
 });
